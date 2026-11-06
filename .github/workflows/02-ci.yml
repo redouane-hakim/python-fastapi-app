@@ -4,12 +4,14 @@ on:
         branches: "main"
     pull_request:
         types: [opened, synchronize]
-env:
-  APP_NAME: fastapi-starter
+
 jobs:
+
     lint:
         name: Lint - Ruff
         runs-on: ubuntu-latest
+        env:
+            APP_NAME: fastapi-starter
         steps:
             - name: Afficher les informations de l'environnement
               run: |
