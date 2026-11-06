@@ -12,6 +12,8 @@ jobs:
         runs-on: ubuntu-latest
         env:
             APP_NAME: fastapi-starter
+            GITHUB_CONTEXT: ${{ toJson(github) }}
+          
         steps:
             - name: Afficher les informations de l'environnement
               run: |
@@ -21,6 +23,7 @@ jobs:
                 echo "Branche : ${{ github.ref_name }}"
                 echo "SHA : ${{ github.sha }}"
                 echo "OS : ${{ runner.os }}"
+                echo "$GITHUB_CONTEXT"
 
             - name: Récupérer le code
               uses: actions/checkout@v4

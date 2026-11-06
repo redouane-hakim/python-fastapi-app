@@ -10,7 +10,7 @@ jobs:
 
     env:
       APP_NAME: MonApplication
-
+        
     steps:
       - name: Afficher les informations du dépôt
         run: |
