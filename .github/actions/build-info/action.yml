@@ -15,6 +15,7 @@ runs:
   using: composite
   steps:
     - name: Print build details
+      shell: bash
       run: echo "Building ${{ inputs.app-name }} v${{ inputs.version }}"
     - name: Generate build id
       id: make-id
