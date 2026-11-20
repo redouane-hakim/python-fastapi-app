@@ -51,7 +51,6 @@ jobs:
         run: echo "APP_NAME is [$APP_NAME]"
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - name: Show deployment target
