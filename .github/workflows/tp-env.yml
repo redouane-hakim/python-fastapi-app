@@ -10,6 +10,10 @@ on:
       version:
         description: "Version à déployer"
         default: "1.0.0"
+      debug:
+        description: "Activer le mode debug"
+        type: boolean
+        default: false
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,6 +33,10 @@ jobs:
         run: |
           echo "Environment: ${{ inputs.environment }}"
           echo "Version: ${{ inputs.version }}"
+      
+      - name: Print debug information
+        if: ${{ inputs.debug }}
+        run: echo "Debug mode is ON (actor=${{ github.actor }}, ref=${{ github.ref_name }})"
 
   verify-env:
     runs-on: ubuntu-latest
