@@ -25,3 +25,10 @@ jobs:
         with:
           name: build-report
           path: report.txt
+
+  verify:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print build report
+        run: cat report.txt
