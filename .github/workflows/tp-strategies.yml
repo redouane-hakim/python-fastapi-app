@@ -13,7 +13,7 @@ jobs:
                - os: ubuntu-latest
                  python-version: 3.14
                  experimental: true
-     continue-on-error: ${{ matrix.experimental }}
+     continue-on-error: ${{ matrix.experimental == true }}
      runs-on: ${{ matrix.os }}
      steps:
       - name: Checkout repository
